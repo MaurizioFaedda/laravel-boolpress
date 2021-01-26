@@ -14,11 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('index');
-
-Auth::routes(['register' => false]);
+Route::get('/posts', 'PostController@index')->name('posts.index');
+Auth::routes(['register' => true]);
 
 
 Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
 
     Route::get('/', 'HomeController@index')->name('index');
+    Route::resource('/posts', 'PostController');
 });
