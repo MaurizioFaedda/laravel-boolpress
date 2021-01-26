@@ -10944,3 +10944,46 @@ a.text-dark:focus {
   }
 }
 
+.bg-wp {
+  background-color: #23282c;
+  height: 40px;
+}
+
+.bg-wp a {
+  color: #9ea3a7;
+}
+
+.bg-wp a:hover {
+  color: #fff;
+}
+
+.bg-wp .rounded-circle {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #9ea3a7;
+}
+
+.bg-wp .rounded-circle a {
+  margin: 0;
+  padding: 0;
+  font-size: 26px;
+}
+
+#my-sidebar {
+  background-color: #23282c;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  padding: 48px 0 0;
+}
+
+#my-sidebar a {
+  color: #9ea3a7;
+}
+
+#my-sidebar a:hover {
+  color: #fff;
+}
+

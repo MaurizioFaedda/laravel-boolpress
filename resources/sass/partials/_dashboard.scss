@@ -1,0 +1,42 @@
+.bg-wp{
+    background-color: $wp_dark;
+    height: 40px;
+    a{
+        color: $wp_dark_light;
+        &:hover{
+            color: #fff;
+        }
+
+    }
+    .rounded-circle{
+        width: 30px;
+        height: 30px;
+        border: 1px solid $wp_dark_light;
+
+        a{
+            margin: 0;
+            padding: 0;
+            font-size: 26px;
+        }
+
+    }
+
+
+}
+
+#my-sidebar{
+    background-color: $wp_dark;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 48px 0 0;
+    a{
+        color: $wp_dark_light;
+        &:hover{
+            color: #fff;
+        }
+
+    }
+}
