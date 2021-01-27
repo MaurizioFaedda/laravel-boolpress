@@ -21,7 +21,6 @@
                                     <th>ID</th>
                                     <th>Title</th>
                                     <th>Slug</th>
-                                    <th>Show</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -29,14 +28,9 @@
                             <tbody>
                                 @foreach ($posts as $post)
                                     <tr>
-                                        <td>{{ $post->id }}</td>
-                                        <td>{{ $post->title }}</td>
+                                        <td> {{ $post->id }}</td>
+                                        <td> <a class="main-td" href="{{ route('admin.posts.show', ['post' => $post->id]) }}">{{ $post->title }} <span class="tooltiptext">Show</span> </a></td>
                                         <td>{{ $post->slug }}</td>
-                                        <td>
-                                            <a class="btn btn-primary" href="{{ route('admin.posts.show', ['post' => $post->id]) }}">
-                                                Show
-                                            </a>
-                                        </td>
                                         <td>
                                             <a class="btn btn-warning" href="{{ route('admin.posts.edit', ['post' => $post->id]) }}">
                                                 Edit

@@ -10966,6 +10966,35 @@ a.text-dark:focus {
   font-size: 32px;
 }
 
+.main-td {
+  color: #0071a1;
+  position: relative;
+  display: inline-block;
+}
+
+.main-td .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #23282c;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 1;
+  margin-left: -60px;
+}
+
+.main-td:hover .tooltiptext {
+  visibility: visible;
+}
+
+.main-td:hover {
+  text-decoration: none;
+}
+
 .bg-wp {
   background-color: #23282c;
   height: 44px;

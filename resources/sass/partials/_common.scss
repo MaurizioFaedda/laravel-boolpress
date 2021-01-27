@@ -20,3 +20,29 @@
 .my-h1{
     font-size:32px;
 }
+
+.main-td{
+    color: $wp_action;
+    position: relative;
+    display: inline-block;
+    .tooltiptext{
+        visibility: hidden;
+        width: 120px;
+        background-color: $wp_dark;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        z-index: 1;
+        margin-left: -60px;
+    }
+    &:hover .tooltiptext{
+        visibility: visible;
+    }
+    &:hover{
+        text-decoration: none;
+    }
+}
