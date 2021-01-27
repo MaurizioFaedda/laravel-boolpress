@@ -6,7 +6,11 @@
             <div class="col-6">
                 <h1>{{ $post->title }}</h1>
                 <p> {{ $post->content}}</p>
-                <p>Category: <a href="{{ route('admin.categories.show', ['category' => $post->category_id]) }}">{{ $post->category ? $post->category->name : 'no category' }}</a></p>
+                <p>Category:
+                     <a href="{{ $post->category ? route('admin.categories.show', ['category' => $post->category_id]) : '' }}">
+                         {{ $post->category ? $post->category->name : 'no category' }}
+                     </a>
+                 </p>
                 <div class="d-flex">
                     <a class="btn btn-warning mr-3" href="{{ route('admin.posts.edit', ['post' => $post->id]) }}">
                         Edit
