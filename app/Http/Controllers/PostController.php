@@ -49,15 +49,14 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
-    {
-        $post = Post::where('slug', $slug)->first();
-        if(!$post) {
-            abort(404);
-        }
-        $data = ['post' -> $post];
-        return view('guest.posts.show', $data);
-    }
+     public function show($slug) {
+         $post = Post::where('slug', $slug)->first();
+         if(!$post) {
+             abort(404);
+         }
+         $data = ['post' => $post];
+         return view('guest.posts.show', $data);
+     }
 
     /**
      * Show the form for editing the specified resource.
