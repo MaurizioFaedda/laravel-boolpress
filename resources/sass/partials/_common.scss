@@ -1,0 +1,22 @@
+.my-action{
+    background-color: $wp_dark_light;
+    border: 1px solid $wp_action;
+    display: inline;
+    vertical-align: middle;
+    border-radius: 2px;
+    padding: 4px 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $wp_action;
+
+    &:hover{
+        text-decoration: none;
+        color: darken($wp_action, 10%);
+        border-color: darken($wp_action, 10%);
+    }
+
+}
+
+.my-h1{
+    font-size:32px;
+}

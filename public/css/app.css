@@ -10944,13 +10944,35 @@ a.text-dark:focus {
   }
 }
 
+.my-action {
+  background-color: #f1f1f1;
+  border: 1px solid #0071a1;
+  display: inline;
+  vertical-align: middle;
+  border-radius: 2px;
+  padding: 4px 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0071a1;
+}
+
+.my-action:hover {
+  text-decoration: none;
+  color: #004d6e;
+  border-color: #004d6e;
+}
+
+.my-h1 {
+  font-size: 32px;
+}
+
 .bg-wp {
   background-color: #23282c;
   height: 44px;
 }
 
 .bg-wp a {
-  color: #9ea3a7;
+  color: #f1f1f1;
 }
 
 .bg-wp a:hover {
@@ -10960,7 +10982,7 @@ a.text-dark:focus {
 .bg-wp .rounded-circle {
   width: 30px;
   height: 30px;
-  border: 1px solid #9ea3a7;
+  border: 1px solid #f1f1f1;
 }
 
 .bg-wp .rounded-circle a {
@@ -10980,10 +11002,14 @@ a.text-dark:focus {
 }
 
 #my-sidebar a {
-  color: #9ea3a7;
+  color: #f1f1f1;
 }
 
 #my-sidebar a:hover {
   color: #fff;
+}
+
+#id {
+  background-color: #f1f1f1;
 }
 
