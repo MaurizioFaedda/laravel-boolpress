@@ -27,17 +27,19 @@
                                 </a>
                             </td>
                             <td>
-                                <a class="btn btn-warning" href="">
+                                <a class="btn btn-warning mr-3" href="{{ route('admin.posts.edit', ['post' => $post->id]) }}">
                                     Edit
                                 </a>
                             </td>
                             <td>
-                                <form class="" action=""  method="post">
+                                <form class="" action="{{ route('admin.posts.destroy', ['post' =>$post->id])}}"  method="post">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" name="button">
                                     Delete
                                 </button>
+
+                            </form>
 
                             </form>
                             </td>
