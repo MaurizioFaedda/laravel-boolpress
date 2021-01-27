@@ -4,7 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12">
-            <h1>Your blog posts</h1>
+            <div class="d-flex justify-content-between pb-3 px-3 align-middle">
+                <h1>All Posts</h1>
+                <a href="{{ route('admin.posts.create') }}" class="btn text-white py-3 btn-info">
+                    Add new Post
+                </a>
+            </div>
             <table class="table">
                 <thead>
                     <tr>
