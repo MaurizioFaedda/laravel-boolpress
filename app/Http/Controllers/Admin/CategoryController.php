@@ -49,9 +49,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Category $category)
     {
-        //
+        if(!$category) {
+            abort(404);
+        }
+        return view('admin.categories.show', ['category' => $category]);
     }
 
     /**
