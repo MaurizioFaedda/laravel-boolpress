@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Category;
+use App\Post;
 
 class CategoryController extends Controller
 {
@@ -54,7 +55,14 @@ class CategoryController extends Controller
         if(!$category) {
             abort(404);
         }
-        return view('admin.categories.show', ['category' => $category]);
+        $post = Post::where('category_id', $category->id)->get();
+        $data = [
+            'category' => $category,
+            'posts' => $post
+        ];
+        // dd($post);
+        // dd($category->id);
+        return view('admin.categories.show', $data);
     }
 
     /**
