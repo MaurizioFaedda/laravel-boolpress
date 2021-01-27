@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Post;
+use App\Category;
 
 class PostController extends Controller
 {
@@ -86,7 +87,11 @@ class PostController extends Controller
         if(!$post) {
             abort(404);
         }
-        return view('admin.posts.edit', ['post' => $post]);
+        $data = [
+            'categories' => Category::all(),
+            'post' => $post
+        ];
+        return view('admin.posts.edit', $data);
 
     }
 

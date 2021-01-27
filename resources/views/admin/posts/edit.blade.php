@@ -19,6 +19,16 @@
                     <textarea name="content" class="form-control" rows="10" required>{{ $post->content }}</textarea>
                 </div>
                 <div class="form-group">
+                    <label>Category</label>
+                    <select class="form-group" name="category_id">
+
+                        <option class="text-secondary" value=""> ------Show all categories------</option>
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}" {{ $category->id == $post->category_id ? 'selected=selected' : '' }}>{{$category->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <button type="submit" class="btn btn-success">
                         Save post
                     </button>
