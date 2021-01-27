@@ -23,12 +23,12 @@
                             <td>{{ $post->title }}</td>
                             <td>{{ $post->slug }}</td>
                             <td>
-                                <a class="btn btn-primary" href="#">
+                                <a class="btn btn-primary" href="{{ route('admin.posts.show', ['post' => $post->id]) }}">
                                     Show
                                 </a>
                             </td>
                             <td>
-                                <a class="btn btn-warning" href="#">
+                                <a class="btn btn-warning" href="{{ route('admin.posts.edit', ['post' => $post->id]) }}">
                                     Edit
                                 </a>
                             </td>
