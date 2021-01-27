@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 use App\Category;
 use App\Post;
@@ -41,7 +42,22 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $new_form = $request ->all();
+        $new_category = new Category();
+        $new_category ->fill($new_form);
+
+        $slug = Str::slug($new_category->slug);
+        $slug_basic = $slug;
+        $new_slug = Category::where('slug', $slug)->first();
+        $counter = 1;
+        while($new_slug){
+           $slug = $slug_basic . '-' . $counter;
+           $counter++;
+           $new_slug = Category::where('slug', $slug)->first();
+        }
+        $new_category->slug = $slug;
+        $new_category->save();
+        return redirect()->route('admin.categories.index');
     }
 
     /**

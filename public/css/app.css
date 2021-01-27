@@ -10963,7 +10963,11 @@ a.text-dark:focus {
 }
 
 .my-h1 {
-  font-size: 32px;
+  font-size: 24px;
+}
+
+.my-h2 {
+  font-size: 16px;
 }
 
 .main-td {

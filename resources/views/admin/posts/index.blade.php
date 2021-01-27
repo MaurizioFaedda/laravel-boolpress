@@ -2,9 +2,9 @@
 
 @section('content')
     <section id="posts">
-        <div class="container px-2 py-3">
-            <div class="row justify-content-center">
-                <div class="col-12">
+        <div class="container py-3">
+            <div class="row justify-content-cente">
+                <div class="col-md-12">
 
                         <div class="my-top d-flex align-items-center  my-3 py-3">
                             <h1 class="my-h1">Posts</h1>

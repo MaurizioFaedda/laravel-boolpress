@@ -3,12 +3,35 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-9">
+        <div class="col-12 pt-2 pb-4">
+            <h1 class="my-h1">Categories</h1>
+        </div>
+        <div class="col-4">
+            <div class="new-category">
+                <h2 class="my-h2">Add New Category</h2>
+                <form action="{{ route('admin.categories.store') }}" method="post">
+                    @csrf
+                    @method('POST')
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" value="" maxlength="255" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Slug</label>
+                        <input type="text" name="slug" class="form-control" value="" maxlength="255" required>
+
+
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success">
+                            Save category
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-8">
             <div class="d-flex justify-content-between pb-3 px-3">
-                <h1>My Category</h1>
-                <button class="btn text-white btn-info" type="button" name="button">
-                    Add new Category
-                </button>
             </div>
             <table class="table text-center">
                 <thead>

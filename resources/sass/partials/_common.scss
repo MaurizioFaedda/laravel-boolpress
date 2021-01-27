@@ -1,3 +1,4 @@
+// button style to link
 .my-action{
     background-color: $wp_dark_light;
     border: 1px solid $wp_action;
@@ -17,8 +18,12 @@
 
 }
 
+// Typography back-office
 .my-h1{
-    font-size:32px;
+    font-size:24px;
+}
+.my-h2{
+    font-size:16px;
 }
 
 .main-td{
