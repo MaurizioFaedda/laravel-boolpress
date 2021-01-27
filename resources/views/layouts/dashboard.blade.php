@@ -86,6 +86,11 @@
                         </ul>
                         <ul class="nav flex-column">
                             <li class="nav-item">
+                                <a class="nav-link active" href="{{ route('admin.categories.index') }}"><i class="fas fa-th-list"></i> Category</a>
+                            </li>
+                        </ul>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
                                 <a class="nav-link active" href=""><i class="fas fa-icons"></i> Media</a>
                             </li>
                         </ul>
