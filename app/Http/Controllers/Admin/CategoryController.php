@@ -87,9 +87,15 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        if(!$category) {
+            abort(404);
+        }
+        $data = [
+            'category' => $category,
+        ];
+        return view('admin.categories.edit', $data);
     }
 
     /**
@@ -99,9 +105,24 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $category)
     {
-        //
+        $form_data = $request->all();
+
+        // dd($form_data);
+        $slug = Str::slug($form_data['slug']);
+        $slug_copy = $slug;
+        $new_slug = Category::where('slug', $slug)->first();
+        $counter = 1;
+        while($new_slug) {
+            $slug = $slug_copy . '-' . $counter;
+            $counter++;
+            $new_slug = Post::where('slug', $slug)->first();
+        }
+        $form_data['slug'] = $slug;
+        $category->update($form_data);
+
+        return redirect()->route('admin.categories.index');
     }
 
     /**
