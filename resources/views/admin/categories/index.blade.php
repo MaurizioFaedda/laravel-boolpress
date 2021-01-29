@@ -59,43 +59,23 @@
                                 <a class="btn btn-warning" href="{{ route('admin.categories.edit', ['category' => $category->id]) }}">
                                     Edit
                                 </a>
-                                {{-- <div class="form-overlay text-center">
-                                    <form class="" action="{{ route('admin.categories.update', ['category' => $category->id]) }}" method="post">
-                                        <div class="d-flex justify-content-between w-100 px-4 pt-4">
-                                            <h2 class="my-h2">Edit Category</h2>
 
-                                            <div class="btn-edit"><i class="fas fa-times fa-2x"></i></div>
-                                        </div>
-                                        @csrf
-                                        @method('PUT')
-                                        <div class="form-group ">
-                                            <label>Name</label>
-                                            <input type="text" name="name" class="form-control " value="{{ $category->name }}" maxlength="255" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Slug</label>
-                                            <input name="content" class="form-control" value="{{ $category->slug }}" maxlength="255" required></input>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-success">
-                                                Save Category
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div> --}}
                             </td>
                             <td>
                                 <form class="" action="{{ route('admin.categories.destroy', ['category' =>$category->id])}}"  method="post">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" name="button">
-                                    Delete
-                                </button>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger" name="button">
+                                        Delete
+                                    </button>
 
-                            </form>
+                                </form>
                             </td>
+
                         </tr>
+
+
+
                     @endforeach
                 </tbody>
             </table>

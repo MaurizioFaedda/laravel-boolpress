@@ -38,13 +38,13 @@
                                         </td>
                                         <td>
                                             <form class="" action="{{ route('admin.posts.destroy', ['post' =>$post->id])}}"  method="post">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger" name="button">
-                                                Delete
-                                            </button>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger" name="button">
+                                                    Delete
+                                                </button>
 
-                                        </form>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
