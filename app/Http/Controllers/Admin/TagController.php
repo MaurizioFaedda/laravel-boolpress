@@ -31,7 +31,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -42,7 +42,22 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $new_form = $request ->all();
+        $new_tag = new Tag();
+        $new_tag ->fill($new_form);
+
+        $slug = Str::slug($new_tag->slug);
+        $slug_basic = $slug;
+        $new_slug = Tag::where('slug', $slug)->first();
+        $counter = 1;
+        while($new_slug){
+           $slug = $slug_basic . '-' . $counter;
+           $counter++;
+           $new_slug = Tag::where('slug', $slug)->first();
+        }
+        $new_tag->slug = $slug;
+        $new_tag->save();
+        return redirect()->route('admin.tags.index');
     }
 
     /**
@@ -58,7 +73,7 @@ class TagController extends Controller
        }
         $data = [
             'tag' => $tag,
-            
+
         ];
         return view("admin.tags.show", $data);
     }
@@ -113,8 +128,10 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Tag $tag)
     {
-        //
+        $tag->posts()->sync([]);
+        $tag->delete();
+        return redirect()->route('admin.tags.index');
     }
 }

@@ -9,7 +9,7 @@
         <div class="col-3">
             <div class="new-item">
                 <h2 class="my-h2">Add New Tag</h2>
-                <form action="" method="post">
+                <form action="{{ route('admin.tags.store') }}" method="post">
                     @csrf
                     @method('POST')
                     <div class="form-group">
@@ -62,7 +62,7 @@
 
                             </td>
                             <td>
-                                <form class="" action=""  method="post">
+                                <form class="" action="{{ route('admin.tags.destroy', ['tag' => $tag->id])}}"  method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger" name="button">
