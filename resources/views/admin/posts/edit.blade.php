@@ -19,7 +19,7 @@
                     <textarea name="content" class="form-control" rows="10" required>{{ $post->content }}</textarea>
                 </div>
                 <div class="form-group">
-                    <label>Category</label>
+                    <label>Categories</label>
                     <select class="form-group" name="category_id">
 
                         <option class="text-secondary" value=""> ------Show all categories------</option>
@@ -27,6 +27,18 @@
                             <option value="{{ $category->id }}" {{ $category->id == $post->category_id ? 'selected=selected' : '' }}>{{$category->name}}</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="form-group">
+                    <p>Tags</p>
+                    @foreach ($tags as $tag)
+                        <div class="form-check">
+                            <input name="tags[]" class="form-check-input" type="checkbox" value="{{ $tag->id }}"
+                            {{ $post->tags->contains($tag) ? 'checked=checked' : '' }}>
+                            <label class="form-check-label">
+                                {{ $tag->name }}
+                            </label>
+                        </div>
+                    @endforeach
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success">
