@@ -13,7 +13,9 @@
                  </p>
                 <p>Tag:
                     @forelse ($post->tags as $tag)
-                       {{ $tag->name }}{{ !$loop->last ? ',' : '' }}
+                      <a href="{{ route('admin.tags.show', ['tag' =>$tag->id])}}">
+                          {{ $tag->name }}{{ !$loop->last ? ',' : '' }}
+                      </a>
                    @empty
                        -
                    @endforelse
