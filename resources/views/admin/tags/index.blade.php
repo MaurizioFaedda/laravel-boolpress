@@ -51,7 +51,7 @@
                             <td>{{ $tag->name }}</td>
                             <td>{{ $tag->slug }}</td>
                             <td>
-                                <a class="" href="">
+                                <a class="" href="{{ route("admin.tags.show", ['tag' =>$tag->id])}}">
                                     Show
                                 </a>
                             </td>

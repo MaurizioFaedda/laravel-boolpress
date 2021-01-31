@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
+use App\Post;
 use App\Tag;
 
 class TagController extends Controller
@@ -50,9 +51,16 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Tag $tag)
     {
-        //
+        if(!$tag) {
+           abort(404);
+       }
+        $data = [
+            'tag' => $tag,
+            
+        ];
+        return view("admin.tags.show", $data);
     }
 
     /**

@@ -38,10 +38,6 @@
                                 <button type="submit" class="btn btn-danger" name="button">
                                     Delete
                                 </button>
-
-                            </form>
-
-                            </form>
                             </td>
                         </tr>
                     @endforeach
