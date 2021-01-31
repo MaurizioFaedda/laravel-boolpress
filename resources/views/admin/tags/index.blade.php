@@ -4,12 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 pt-2 pb-4">
-            <h1 class="my-h1">Categories</h1>
+            <h1 class="my-h1">Tags</h1>
         </div>
         <div class="col-3">
             <div class="new-item">
-                <h2 class="my-h2">Add New Category</h2>
-                <form action="{{ route('admin.categories.store') }}" method="post">
+                <h2 class="my-h2">Add New Tag</h2>
+                <form action="" method="post">
                     @csrf
                     @method('POST')
                     <div class="form-group">
@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">
-                            Save category
+                            Save tags
                         </button>
                     </div>
                 </form>
@@ -37,7 +37,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Category</th>
+                        <th>Tag</th>
                         <th>Slug</th>
                         <th>Related posts</th>
                         <th>Edit</th>
@@ -45,24 +45,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($categories as $category)
+                    @foreach ($tags as $tag)
                         <tr>
-                            <td>{{ $category->id }}</td>
-                            <td>{{ $category->name }}</td>
-                            <td>{{ $category->slug }}</td>
+                            <td>{{ $tag->id }}</td>
+                            <td>{{ $tag->name }}</td>
+                            <td>{{ $tag->slug }}</td>
                             <td>
-                                <a class="" href="{{ route('admin.categories.show', ['category' => $category->id]) }}">
+                                <a class="" href="">
                                     Show
                                 </a>
                             </td>
                             <td class="td-edit">
-                                <a class="btn btn-warning" href="{{ route('admin.categories.edit', ['category' => $category->id]) }}">
+                                <a class="btn btn-warning" href="">
                                     Edit
                                 </a>
 
                             </td>
                             <td>
-                                <form class="" action="{{ route('admin.categories.destroy', ['category' =>$category->id])}}"  method="post">
+                                <form class="" action=""  method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger" name="button">

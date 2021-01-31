@@ -88,7 +88,12 @@
                         </ul>
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active" href="{{ route('admin.categories.index') }}"><i class="fas fa-th-list"></i> Category</a>
+                                <a class="nav-link active" href="{{ route('admin.categories.index') }}"><i class="fas fa-th-list"></i> Categories</a>
+                            </li>
+                        </ul>
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="{{ route('admin.tags.index') }}"><i class="fas fa-tags"></i> Tags</a>
                             </li>
                         </ul>
                         <ul class="nav flex-column">
