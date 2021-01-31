@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Post;
 use App\Category;
+use App\Tag;
 
 class PostController extends Controller
 {
@@ -33,7 +34,8 @@ class PostController extends Controller
      */
     public function create()
     {   $data = [
-            'categories' => Category::all()
+            'categories' => Category::all(),
+            'tags' => Tag::all()
         ];
         return view('admin.posts.create', $data);
     }
@@ -61,6 +63,7 @@ class PostController extends Controller
         }
         $new_post->slug = $slug;
         $new_post->save();
+        $new_post->tags()->sync($new_form['tags']);
         return redirect()->route('admin.posts.index');
     }
 
@@ -92,7 +95,8 @@ class PostController extends Controller
         }
         $data = [
             'categories' => Category::all(),
-            'post' => $post
+            'post' => $post,
+            'tags' => Tag::all()
         ];
         return view('admin.posts.edit', $data);
 
@@ -120,6 +124,7 @@ class PostController extends Controller
             $new_slug = Post::where('slug', $slug)->first();
         }
         $form_data['slug'] = $slug;
+        $post->tags()->sync($form_data['tags']);
         $post->update($form_data);
 
         return redirect()->route('admin.posts.index');

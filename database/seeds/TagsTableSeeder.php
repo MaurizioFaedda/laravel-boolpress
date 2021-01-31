@@ -3,6 +3,8 @@
 use Illuminate\Database\Seeder;
 use App\Tag;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
+
 
 class TagsTableSeeder extends Seeder
 {

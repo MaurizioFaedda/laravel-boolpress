@@ -8,8 +8,15 @@
                 <p> {{ $post->content}}</p>
                 <p>Category:
                      <a href="{{ $post->category ? route('admin.categories.show', ['category' => $post->category_id]) : '' }}">
-                         {{ $post->category ? $post->category->name : 'no category' }}
+                         {{ $post->category ? $post->category->name : '' }}
                      </a>
+                 </p>
+                <p>Tag:
+                    @forelse ($post->tags as $tag)
+                       {{ $tag->name }}{{ !$loop->last ? ',' : '' }}
+                   @empty
+                       -
+                   @endforelse
                  </p>
                 <div class="d-flex">
                     <a class="btn btn-warning mr-3" href="{{ route('admin.posts.edit', ['post' => $post->id]) }}">
