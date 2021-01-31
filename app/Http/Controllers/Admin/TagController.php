@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 use App\Tag;
 
@@ -60,9 +61,15 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Tag $tag)
     {
-        //
+        if(!$tag) {
+            abort(404);
+        }
+        $data = [
+            'tag' => $tag,
+        ];
+        return view('admin.tags.edit', $data);
     }
 
     /**
@@ -72,9 +79,24 @@ class TagController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Tag $tag)
     {
-        //
+        $form_data = $request->all();
+
+        // dd($form_data);
+        $slug = Str::slug($form_data['slug']);
+        $slug_copy = $slug;
+        $new_slug = Tag::where('slug', $slug)->first();
+        $counter = 1;
+        while($new_slug) {
+            $slug = $slug_copy . '-' . $counter;
+            $counter++;
+            $new_slug = Tag::where('slug', $slug)->first();
+        }
+        $form_data['slug'] = $slug;
+        $tag->update($form_data);
+
+        return redirect()->route('admin.tags.index');
     }
 
     /**

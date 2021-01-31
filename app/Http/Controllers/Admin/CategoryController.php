@@ -117,7 +117,7 @@ class CategoryController extends Controller
         while($new_slug) {
             $slug = $slug_copy . '-' . $counter;
             $counter++;
-            $new_slug = Post::where('slug', $slug)->first();
+            $new_slug = Category::where('slug', $slug)->first();
         }
         $form_data['slug'] = $slug;
         $category->update($form_data);

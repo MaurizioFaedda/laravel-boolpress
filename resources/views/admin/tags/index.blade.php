@@ -56,7 +56,7 @@
                                 </a>
                             </td>
                             <td class="td-edit">
-                                <a class="btn btn-warning" href="">
+                                <a class="btn btn-warning" href="{{ route('admin.tags.edit', ['tag' => $tag->id]) }}">
                                     Edit
                                 </a>
 
