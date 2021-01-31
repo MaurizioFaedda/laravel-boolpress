@@ -114,7 +114,7 @@ class PostController extends Controller
         $form_data = $request->all();
 
 
-        $slug = Str::slug($form_data['title']);
+        $slug = Str::slug($form_data['slug']);
         $slug_copy = $slug;
         $new_slug = Post::where('slug', $slug)->first();
         $counter = 1;

@@ -15,6 +15,10 @@
                     <input type="text" name="title" class="form-control" value="{{ $post->title }}" maxlength="255" required>
                 </div>
                 <div class="form-group">
+                    <label>Slug</label>
+                    <input type="text" name="slug" class="form-control" value="{{ $post->title }}" maxlength="255" required>
+                </div>
+                <div class="form-group">
                     <label>Content</label>
                     <textarea name="content" class="form-control" rows="10" required>{{ $post->content }}</textarea>
                 </div>
