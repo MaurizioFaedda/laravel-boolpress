@@ -3,9 +3,7 @@
     height: 44px;
     a{
         color: $wp_dark_light;
-        &:hover{
-            color: #fff;
-        }
+        
 
     }
     .rounded-circle{
@@ -39,4 +37,8 @@
         }
 
     }
+}
+
+.my-drop{
+    background-color: $wp_dark;
 }

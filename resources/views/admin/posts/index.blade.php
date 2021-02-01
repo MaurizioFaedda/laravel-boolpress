@@ -3,16 +3,15 @@
 @section('content')
     <section id="posts">
         <div class="container py-3">
-            <div class="row justify-content-cente">
+            <div class="row justify-content-center">
                 <div class="col-md-12">
 
-                        <div class="my-top d-flex align-items-center  my-3 py-3">
-                            <h1 class="my-h1">Posts</h1>
-                            <a href="{{ route('admin.posts.create') }}" class="my-action ml-2 mb-1">
-                                Add New
-                            </a>
-                        </div>
-                        <div class="info-post">
+                    <h1 class="my-h1">Posts</h1>
+                    <a href="{{ route('admin.posts.create') }}" class="my-action">
+                        Add New
+                    </a>
+
+                        <div class="info-post mt-4">
                             <span>All ({{$postCount}})</span>
                         </div>
                         <table class="table">

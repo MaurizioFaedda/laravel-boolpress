@@ -11008,10 +11008,6 @@ a.text-dark:focus {
   color: #f1f1f1;
 }
 
-.bg-wp a:hover {
-  color: #fff;
-}
-
 .bg-wp .rounded-circle {
   width: 30px;
   height: 30px;
@@ -11040,6 +11036,10 @@ a.text-dark:focus {
 
 #my-sidebar a:hover {
   color: #fff;
+}
+
+.my-drop {
+  background-color: #23282c;
 }
 
 #id {
