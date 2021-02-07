@@ -36,6 +36,9 @@
                         <li>
                             <a href="{{ route('posts.index') }}">Posts</a>
                         </li>
+                        <li class="mx-3">
+                            <a href="{{ route('contacts') }}">Contacts</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

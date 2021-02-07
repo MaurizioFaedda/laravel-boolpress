@@ -11,4 +11,13 @@ class HomeController extends Controller
     {
         return view('guest.home');
     }
+    public function contacts()
+    {
+        return view('guest.contacts');
+    }
+    public function contactsSent(Request $request)
+    {
+        $form_data = $request->all();
+        dd($form_data);
+    }
 }
