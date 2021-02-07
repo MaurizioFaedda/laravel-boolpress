@@ -14,12 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('index');
+
 Route::get('/posts', 'PostController@index')->name('posts.index');
-Route::get('/posts/{slug}', 'PostController@show')->name('posts.show');
+Route::get('/posts/{slug}', 'PostController@show')->name('posts.show')
+;
 Route::get('/categories/{slug}', 'CategoryController@show')->name('categories.show');
+
 Route::get('/tags/{slug}', 'TagController@show')->name('tags.show');
+
 Route::get('/contacts', 'HomeController@contacts')->name('contacts');
+Route::get('/thank-you', 'HomeController@thankYou')->name('contacts.thank-you');
 Route::post('/contacts', 'HomeController@contactsSent')->name('contacts.sent');
+
 
 
 
