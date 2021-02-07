@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 use App\Post;
 use App\Category;
 use App\Tag;
@@ -58,6 +59,11 @@ class PostController extends Controller
         ]);
         $new_form = $request ->all();
         $new_post = new Post();
+        if(array_key_exists('image', $new_form)){
+            $cover_path = Storage::put('post_covers', $new_form['image']);
+            $new_form['cover'] = $cover_path;
+        }
+
         $new_post ->fill($new_form);
 
         $slug = Str::slug($new_post->title);

@@ -6,8 +6,10 @@
             <div class="col-9">
 
                 <h1>{{ $post->title }}</h1>
+                @if($post->cover)
+                   <img src="{{ asset('storage/' . $post->cover) }}" alt="{{ $post->title }}">
+               @endif
                 <p>{{ $post->content}}</p>
-                {{-- <p>: <a href="#">{{ $post->category ? $post->category->name : '' }}</a></p> --}}
                 <ul>
                     <li>
                         @if ($post->category)
